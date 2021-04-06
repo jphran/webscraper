@@ -1,5 +1,5 @@
 from urllib.request import urlopen
-from bs4 import BeautifulSoup as soup
+from bs4 import BeautifulSoup as Soup
 
 
 class PageScraper:
@@ -15,7 +15,7 @@ class PageScraper:
         self.page_html = client.read()
         client.close()
 
-        self.page_soup = soup(self.page_html, 'html.parser')
+        self.page_soup = Soup(self.page_html, 'html.parser')
 
     def get_all_containers(self, component_type: str, component: dict):
         """Grabs all containers of interest from webpage"""
